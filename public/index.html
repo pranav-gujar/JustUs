@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="fairy">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>JustUs — Our Private Corner</title>
+  <meta name="description" content="A private, cozy table for two. No coins, no accounts, leaves no trace once you leave.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:italic@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <!-- Ambient Fairy World Atmosphere -->
+  <div class="aurora-glow aurora-1"></div>
+  <div class="aurora-glow aurora-2"></div>
+  <div class="aurora-glow aurora-3"></div>
+  <div class="fairy-dust" aria-hidden="true">
+    <span class="mote m1"></span>
+    <span class="mote m2"></span>
+    <span class="mote m3"></span>
+    <span class="mote m4"></span>
+    <span class="mote m5"></span>
+    <span class="mote m6"></span>
+    <span class="mote m7"></span>
+    <span class="mote m8"></span>
+  </div>
+
+  <!-- ==================== VIEW 1: WELCOME & LOBBY ==================== -->
+  <main id="lobby-view" class="view active">
+    <div class="cozy-card">
+      
+      <!-- Brand & Mood Header -->
+      <div class="hero-section">
+        <div class="cozy-pill">
+          <svg class="ui-icon icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg>
+          <span>A Private Table For Two</span>
+        </div>
+        <h1 class="brand-title">Just<span class="italic-serif">Us</span></h1>
+        <p class="brand-tagline">No coins. No history saved. Just an intimate space to talk as long as you'd like.</p>
+      </div>
+
+      <!-- Invitee Personalized Invitation (when clicking a shared link) -->
+      <div id="invite-card" class="invitation-card hidden">
+        <div class="invitation-badge">
+          <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span>You're Invited</span>
+        </div>
+        <h3 id="inviter-greeting">Someone saved a table for you</h3>
+        <p class="invitation-subtext">No accounts needed. Pick a nickname and pull up a chair.</p>
+        <div class="input-field-wrap">
+          <input type="text" id="invitee-name-input" placeholder="Your nickname" maxlength="20" autofocus autocomplete="off">
+        </div>
+        <button id="btn-pull-chair" class="btn btn-warm-glow">
+          <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>Pull Up a Chair</span>
+        </button>
+      </div>
+
+      <!-- Host Creator Section (Default when visiting homepage) -->
+      <div id="host-card" class="host-flow">
+        <div class="input-field-wrap">
+          <label for="host-name-input">What should they call you?</label>
+          <input type="text" id="host-name-input" placeholder="Your nickname" maxlength="20" autofocus autocomplete="off">
+        </div>
+
+        <button id="btn-create-table" class="btn btn-warm-glow">
+          <svg class="ui-icon icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg>
+          <span>Open a Table for Two</span>
+        </button>
+
+        <div class="subtle-divider">
+          <span>OR HAVE A CODE?</span>
+        </div>
+
+        <div class="code-entry-row">
+          <input type="text" id="manual-code-input" placeholder="Room code" autocomplete="off">
+          <button id="btn-manual-join" class="btn btn-soft">Join</button>
+        </div>
+      </div>
+
+      <!-- Reassurance Footer -->
+      <div class="cozy-footer">
+        <div class="perk-row">
+          <div class="perk-item">
+            <svg class="ui-icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+            <span>Vanishes on exit</span>
+          </div>
+          <span class="sep">•</span>
+          <div class="perk-item">
+            <svg class="ui-icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Strictly 2 people</span>
+          </div>
+          <span class="sep">•</span>
+          <div class="perk-item">
+            <svg class="ui-icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg>
+            <span>Voice & media</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ==================== VIEW 2: SHARE POPUP / WAITING MODAL ==================== -->
+  <div id="share-modal" class="modal-backdrop hidden">
+    <div class="modal-card">
+      <div class="modal-top">
+        <div class="mini-spark">
+          <svg class="modal-hero-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 22h8"/><path d="M12 11v11"/><path d="m19 3-4 8H9L5 3z"/></svg>
+        </div>
+        <h2>Table is Ready</h2>
+        <p>Send this link to her on the app. As soon as she taps it, your conversation begins.</p>
+      </div>
+
+      <div class="share-action-box">
+        <label>1-Tap Direct Link</label>
+        <div class="copy-bar">
+          <input type="text" id="share-link-input" readonly>
+          <button id="btn-copy-link" class="btn-copy">
+            <svg class="ui-icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            <span>Copy Link</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="code-fallback-box">
+        <label>Or if the app blocks links, just tell her the code:</label>
+        <div class="code-pill-row">
+          <span class="code-chip" id="share-code-chip">...</span>
+          <button id="btn-copy-code" class="btn-chip-copy">
+            <svg class="ui-icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+            <span>Copy Code</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="soft-waiting">
+        <div class="pulse-ring"></div>
+        <span>Waiting for her to pull up a chair...</span>
+      </div>
+
+      <button id="btn-enter-table-now" class="btn btn-soft full-btn">
+        Enter Table Now
+      </button>
+    </div>
+  </div>
+
+  <!-- ==================== VIEW 3: ACTIVE CONVERSATION ==================== -->
+  <main id="chat-view" class="view hidden">
+    <div class="chat-wrapper">
+
+      <!-- Navigation & Room Bar -->
+      <header class="chat-topbar">
+        <div class="user-meta">
+          <div class="avatar-circle">
+            <span id="partner-initial">?</span>
+            <span id="online-glow-dot" class="glow-dot"></span>
+          </div>
+          <div class="meta-details">
+            <div class="name-line">
+              <span id="partner-display-name" class="name-label">Waiting for match...</span>
+              <span class="table-tag">Table for 2</span>
+            </div>
+            <span id="partner-subtext" class="status-subtext">Send link to begin</span>
+          </div>
+        </div>
+
+        <div class="topbar-tools">
+          <!-- Theme Switcher Pill -->
+          <div class="theme-dropdown">
+            <button id="btn-theme-toggle" class="icon-tool" title="Change Theme Palette">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.563-2.512 5.563-5.563C22 6.5 17.5 2 12 2z"/></svg>
+            </button>
+            <div id="theme-menu" class="theme-menu hidden">
+              <button data-theme="fairy" class="theme-opt active">Fairy World</button>
+              <button data-theme="starlight" class="theme-opt">Starlight Dream</button>
+              <button data-theme="rose" class="theme-opt">Rose Romance</button>
+            </div>
+          </div>
+
+          <!-- Share Link Modal Opener -->
+          <button id="btn-reopen-share" class="icon-tool" title="Share Table Link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </button>
+
+          <!-- Peaceful Leave / Vanish Button -->
+          <button id="btn-open-vanish" class="btn-vanish" title="Leave and Vanish Table">
+            <svg class="ui-icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+            <span>Vanish Table</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Messages Feed -->
+      <div id="messages-container" class="messages-container">
+        <!-- Quiet notice inside the room -->
+        <div class="welcome-whisper">
+          <div class="whisper-icon-wrap">
+            <svg class="whisper-leaf-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+          </div>
+          <h4>JustUs Private Table</h4>
+          <p>What happens here stays between the two of you. Zero history is saved anywhere. Once either of you leaves, everything gently vanishes.</p>
+        </div>
+      </div>
+
+      <!-- Realtime Typing Indicator -->
+      <div id="typing-pill" class="typing-pill hidden">
+        <div class="typing-wave">
+          <span></span><span></span><span></span>
+        </div>
+        <span id="typing-text">typing a message...</span>
+      </div>
+
+      <!-- Icebreaker Prompt Drawer (Fun starters!) -->
+      <div id="icebreaker-drawer" class="icebreaker-drawer hidden">
+        <div class="drawer-header">
+          <div class="drawer-title">
+            <svg class="ui-icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
+            <span>Conversation Starters</span>
+          </div>
+          <button id="btn-close-icebreakers" class="btn-close-drawer">✕</button>
+        </div>
+        <div class="icebreaker-list" id="icebreaker-list">
+          <button class="icebreaker-chip">What's your ideal Sunday look like?</button>
+          <button class="icebreaker-chip">Late-night chai or morning coffee?</button>
+          <button class="icebreaker-chip">Tell me a movie you can rewatch forever</button>
+          <button class="icebreaker-chip">What song is stuck in your head lately?</button>
+          <button class="icebreaker-chip">Beach sunset or cozy mountain cabin?</button>
+          <button class="icebreaker-chip">If we skipped to dessert, what would we order?</button>
+        </div>
+      </div>
+
+      <!-- Media File Preview Bar (Before sending) -->
+      <div id="media-preview-tray" class="preview-tray hidden">
+        <div class="preview-media-box">
+          <img id="tray-image" src="" alt="preview" class="hidden">
+          <video id="tray-video" src="" class="hidden" muted></video>
+          <div id="tray-audio-icon" class="audio-tray-icon hidden">
+            <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg>
+            <span>Voice Note Ready</span>
+          </div>
+          <div class="tray-info">
+            <span id="tray-filename">Photo.jpg</span>
+            <span id="tray-filesize">2.1 MB</span>
+          </div>
+        </div>
+        <button id="btn-remove-attachment" class="btn-tray-remove">✕</button>
+      </div>
+
+      <!-- Live Voice Recording Wave Bar -->
+      <div id="voice-recording-bar" class="voice-recording-bar hidden">
+        <div class="rec-dot"></div>
+        <span id="rec-timer">0:00</span>
+        <div class="rec-actions">
+          <button id="btn-cancel-voice" class="btn-rec-cancel">Cancel</button>
+          <button id="btn-send-voice" class="btn-rec-send">
+            <svg class="ui-icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            <span>Send Voice</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Creative Vector Reaction Drawer -->
+      <div id="reaction-drawer" class="reaction-drawer hidden">
+        <div class="reaction-grid" id="reaction-grid">
+          <!-- Populated by SVG icon reactions -->
+        </div>
+      </div>
+
+      <!-- Bottom Input Composer -->
+      <footer class="composer-bar">
+        <input type="file" id="media-file-input" accept="image/*,video/*,audio/*" style="display: none;">
+
+        <div class="composer-tools-left">
+          <!-- Icebreakers -->
+          <button id="btn-toggle-icebreakers" class="composer-icon-btn" title="Conversation Starters">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
+          </button>
+          <!-- Attachment -->
+          <button id="btn-pick-attachment" class="composer-icon-btn" title="Send Photo or Video">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+          </button>
+          <!-- Creative Reactions Drawer -->
+          <button id="btn-toggle-reactions" class="composer-icon-btn" title="Send Reaction">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          </button>
+        </div>
+
+        <div class="composer-input-wrapper">
+          <textarea id="message-input" rows="1" placeholder="Say something sweet..." maxlength="2000"></textarea>
+        </div>
+
+        <div class="composer-tools-right">
+          <!-- Voice Note Record Button -->
+          <button id="btn-record-voice" class="composer-icon-btn voice-btn" title="Record Voice Note">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+          </button>
+          <!-- Send Button -->
+          <button id="btn-submit-message" class="btn-send-chic" title="Send">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+          </button>
+        </div>
+      </footer>
+      <div class="room-privacy-footer">
+        <span class="whisper-text">JustUs • Private Table for Two • Vanishes on exit</span>
+      </div>
+    </div>
+  </main>
+
+  <!-- ==================== VIEW 4: VANISHED SCREEN ==================== -->
+  <main id="vanished-view" class="view hidden">
+    <div class="vanished-card">
+      <div class="peace-icon-wrap">
+        <svg class="peace-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+      </div>
+      <h2 class="vanished-title">The Table Has Vanished</h2>
+      <p id="vanish-statement" class="vanished-text">The conversation ended and everything was gently erased. No traces, no history.</p>
+
+      <div class="comfort-badge">
+        <svg class="ui-icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>100% Private • Always Safe</span>
+      </div>
+
+      <button id="btn-new-table" class="btn btn-warm-glow">
+        <svg class="ui-icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        <span>Open a New Table</span>
+      </button>
+    </div>
+  </main>
+
+  <!-- ==================== MODAL: VANISH CONFIRMATION ==================== -->
+  <div id="vanish-confirm-modal" class="modal-backdrop hidden">
+    <div class="modal-card confirm-card">
+      <div class="soft-leaf-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+      </div>
+      <h3>Ready to leave?</h3>
+      <p>Leaving will immediately close this private table for both of you. All messages and media will vanish into thin air.</p>
+      <div class="modal-buttons">
+        <button id="btn-stay-chatting" class="btn btn-soft">Stay & Chat</button>
+        <button id="btn-confirm-vanish" class="btn btn-vanish-confirm">Yes, Leave Table</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL: MEDIA LIGHTBOX ==================== -->
+  <div id="media-lightbox" class="lightbox-backdrop hidden">
+    <button id="btn-close-lightbox" class="lightbox-close">✕</button>
+    <div class="lightbox-viewer">
+      <img id="lightbox-img" src="" alt="Full view" class="hidden">
+      <video id="lightbox-video" src="" controls autoplay class="hidden"></video>
+    </div>
+  </div>
+
+  <!-- Toast Notification Hub -->
+  <div id="toast-hub" class="toast-hub"></div>
+
+  <!-- Socket.io & App Logic -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
